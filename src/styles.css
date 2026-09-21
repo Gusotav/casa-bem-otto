@@ -133,8 +133,9 @@ button, a, input, select, textarea { outline-offset: 3px; }
 .gallery-expand { position: absolute; right: .75rem; bottom: .75rem; display: flex; align-items: center; gap: .45rem; border: 1px solid var(--glass-border); border-radius: 999px; background: var(--glass); padding: .55rem .75rem; color: var(--dark-foreground); font-size: .7rem; font-weight: 600; opacity: 0; transform: translateY(.35rem); transition: opacity .25s ease, transform .25s ease; backdrop-filter: blur(8px); }
 .trust-proof { display: flex; width: fit-content; align-items: center; gap: 1rem; border-left: 2px solid var(--primary); padding: .65rem 1.1rem; background: oklch(0.965 0.014 87 / 5%); }
 .final-form-card { box-shadow: inset 0 1px 0 oklch(1 0 0 / 68%), 0 26px 70px -32px oklch(0.05 0.004 67 / 85%); }
-.service-card { min-height: 12rem; border: 1px solid var(--dark-line); border-radius: var(--radius); background: oklch(0.965 0.014 87 / 5%); padding: 1.5rem; box-shadow: inset 0 1px 0 oklch(0.965 0.014 87 / 7%); transition: transform .3s ease, border-color .3s ease, background .3s ease; }
-.service-card:hover { transform: translateY(-4px); border-color: oklch(0.72 0.205 151 / 42%); background: oklch(0.72 0.205 151 / 7%); }
+.service-card { position: relative; min-height: 12rem; overflow: hidden; border: 1px solid var(--glass-border); border-radius: calc(var(--radius) + .35rem); background: var(--glass); box-shadow: var(--shadow-glass); backdrop-filter: blur(16px); padding: 1.5rem; transition: transform .3s ease, border-color .3s ease, background .3s ease; }
+.service-card::before { content: ""; position: absolute; inset: 0 12% auto; height: 1px; background: linear-gradient(90deg, transparent, oklch(0.965 0.014 87 / 44%), transparent); pointer-events: none; }
+.service-card:hover { transform: translateY(-4px); border-color: oklch(0.72 0.205 151 / 42%); background: var(--glass-strong); }
 .closing-shade { background: linear-gradient(90deg, oklch(0.09 0.006 67 / 97%), oklch(0.09 0.006 67 / 84%)); }
 .hide-scrollbar { scrollbar-width: none; }
 .hide-scrollbar::-webkit-scrollbar { display: none; }
