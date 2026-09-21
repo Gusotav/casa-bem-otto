@@ -117,10 +117,11 @@ button, a, input, select, textarea { outline-offset: 3px; }
 .value-number { display: grid; place-items: center; width: 2.5rem; height: 2.5rem; border-radius: 999px; background: var(--primary-soft); color: var(--primary-hover); font-size: .72rem; font-weight: 700; }
 .collection-card { height: 26.25rem; border-radius: var(--radius); transition: flex-grow .4s cubic-bezier(.2,.8,.2,1), flex-basis .4s cubic-bezier(.2,.8,.2,1), opacity .3s ease; }
 .card-shade { background: linear-gradient(180deg, oklch(0.09 0.006 67 / 15%) 12%, oklch(0.09 0.006 67 / 46%) 54%, oklch(0.09 0.006 67 / 96%) 100%); }
-.comparison-table { border: 1px solid var(--dark-line); border-radius: var(--radius); background: oklch(0.205 0.01 67 / 48%); }
+.comparison-table { position: relative; isolation: isolate; border: 1px solid var(--glass-border); border-radius: calc(var(--radius) + .35rem); background: var(--glass); box-shadow: var(--shadow-glass); backdrop-filter: blur(16px); }
+.comparison-table::before { content: ""; position: absolute; z-index: 2; inset: 0 10% auto; height: 1px; background: linear-gradient(90deg, transparent, oklch(0.965 0.014 87 / 48%), transparent); pointer-events: none; }
 .comparison-row { border-top: 1px solid var(--dark-line); transition: background .25s ease; }
 .comparison-row:hover { background: oklch(0.965 0.014 87 / 4%); }
-.comparison-best-head, .comparison-best { border-left: 1px solid oklch(0.72 0.205 151 / 38%); background: var(--primary-soft); }
+.comparison-best-head, .comparison-best { border-left: 1px solid oklch(0.72 0.205 151 / 38%); background: oklch(0.72 0.205 151 / 10%); box-shadow: inset 1px 0 0 oklch(0.965 0.014 87 / 4%); }
 .comparison-row:hover .comparison-best svg { transform: scale(1.12); }
 .comparison-best svg { transition: transform .25s ease; }
 .stats-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1px; background: var(--dark-line); border: 1px solid var(--dark-line); }
@@ -154,7 +155,7 @@ button, a, input, select, textarea { outline-offset: 3px; }
   .gallery-tile { aspect-ratio: 4/3; }
 }
 @media (max-width: 767px) {
-  .glass-panel, .dark-glass { backdrop-filter: blur(8px); }
+  .glass-panel, .dark-glass, .comparison-table { backdrop-filter: blur(8px); }
   .hero-shade { background: linear-gradient(180deg, oklch(0.09 0.006 67 / 55%) 0%, oklch(0.09 0.006 67 / 95%) 72%); }
   .hero-parallax { transform: scale(1.02); }
   .hero-title { max-width: 24rem; font-size: clamp(2.25rem, 11vw, 3.15rem); }
