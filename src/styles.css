@@ -112,7 +112,7 @@ button, a, input, select, textarea { outline-offset: 3px; }
 .dark-glass { position: relative; overflow: hidden; border: 1px solid var(--glass-border); border-radius: calc(var(--radius) + .35rem); background: var(--glass); box-shadow: var(--shadow-glass); backdrop-filter: blur(16px); }
 .cookie-banner { position: fixed; padding-bottom: max(.75rem, env(safe-area-inset-bottom)); }
 .dark-glass::before { content: ""; position: absolute; inset: 0 12% auto; height: 1px; background: linear-gradient(90deg, transparent, oklch(0.965 0.014 87 / 48%), transparent); pointer-events: none; }
-.value-card { display: grid; grid-template-columns: auto minmax(0,1fr); gap: 1rem; padding: 1.15rem; border: 1px solid var(--border); border-radius: var(--radius); background: oklch(0.985 0.009 87 / 62%); transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease, background .3s ease; }
+.value-card { display: grid; grid-template-columns: auto minmax(0,1fr); gap: 1rem; padding: 0.85rem; border: 1px solid var(--border); border-radius: var(--radius); background: oklch(0.985 0.009 87 / 62%); transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease, background .3s ease; }
 .value-card:hover { transform: translateY(-3px); border-color: oklch(0.72 0.205 151 / 52%); background: var(--card); box-shadow: 0 14px 34px -24px oklch(0.72 0.205 151 / 55%); }
 .value-number { display: grid; place-items: center; width: 2.5rem; height: 2.5rem; border-radius: 999px; background: var(--primary-soft); color: var(--primary-hover); font-size: .72rem; font-weight: 700; }
 .collection-card { height: 26.25rem; border-radius: var(--radius); transition: flex-grow .4s cubic-bezier(.2,.8,.2,1), flex-basis .4s cubic-bezier(.2,.8,.2,1), opacity .3s ease; }
