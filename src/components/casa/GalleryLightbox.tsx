@@ -52,7 +52,7 @@ export function GalleryLightbox() {
         key={asset.small}
         ref={(node) => { if (active === index && node) opener.current = node; }}
         type="button"
-        className="gallery-tile group"
+        className="gallery-tile group border-0 p-0 text-left"
         onClick={(event) => { opener.current = event.currentTarget; setActive(index); }}
         aria-label={`Ampliar imagem ${index + 1}: ${galleryAlts[index]}`}
       >

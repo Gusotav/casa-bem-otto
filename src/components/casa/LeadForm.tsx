@@ -38,14 +38,16 @@ export function LeadForm({ variant = "hero" }: Props) {
   };
 
   if (success) return (
-    <div role="status" className="grid min-h-64 place-items-center text-center">
-      <div><CheckCircle2 className="mx-auto mb-4 size-10 text-primary" /><h3 className="font-display text-3xl font-semibold">Recebemos seu interesse.</h3><p className="mt-3 text-sm text-muted-foreground">A demonstração foi concluída. A integração de atendimento poderá ser conectada depois.</p></div>
+    <div role="status" className={`grid min-h-64 place-items-center text-center ${final ? "text-foreground" : "text-dark-foreground"}`}>
+      <div><CheckCircle2 className="mx-auto mb-4 size-10 text-primary" /><h3 className="font-display text-3xl font-semibold">Recebemos seu interesse.</h3><p className={`mt-3 text-sm ${final ? "text-muted-foreground" : "text-dark-muted"}`}>A demonstração foi concluída. A integração de atendimento poderá ser conectada depois.</p></div>
     </div>
   );
 
-  const field = "h-12 border-glass-border bg-field px-4 text-primary-foreground shadow-none placeholder:text-dark-muted focus-visible:ring-primary";
+  const field = final
+    ? "h-12 border-input bg-background px-4 text-foreground shadow-none placeholder:text-muted-foreground focus-visible:ring-primary"
+    : "h-12 border-glass-border bg-field px-4 text-primary-foreground shadow-none placeholder:text-dark-muted focus-visible:ring-primary";
   return (
-    <form onSubmit={submit} noValidate className="space-y-4">
+    <form onSubmit={submit} noValidate className={`space-y-4 ${final ? "text-foreground" : "text-dark-foreground"}`}>
       <div>
         <label htmlFor={`${variant}-name`} className="mb-1.5 block text-xs font-semibold">Nome completo</label>
         <Input id={`${variant}-name`} name="name" autoComplete="name" maxLength={100} className={field} aria-invalid={!!errors["name"]} aria-describedby={errors["name"] ? `${variant}-name-error` : undefined} />
@@ -57,14 +59,14 @@ export function LeadForm({ variant = "hero" }: Props) {
       </div>
       {final ? <>
         <div><label htmlFor="final-city" className="mb-1.5 block text-xs font-semibold">Cidade / Estado</label><Input id="final-city" name="city" maxLength={100} className={field} /></div>
-        <div><label htmlFor="final-message" className="mb-1.5 block text-xs font-semibold">Conte brevemente o que deseja</label><Textarea id="final-message" name="message" maxLength={800} rows={4} className="border-glass-border bg-field px-4 py-3 text-primary-foreground shadow-none placeholder:text-dark-muted focus-visible:ring-primary" /></div>
+        <div><label htmlFor="final-message" className="mb-1.5 block text-xs font-semibold">Conte brevemente o que deseja</label><Textarea id="final-message" name="message" maxLength={800} rows={4} className="border-input bg-background px-4 py-3 text-foreground shadow-none placeholder:text-muted-foreground focus-visible:ring-primary" /></div>
       </> : <>
         <div><label htmlFor="hero-focus" className="mb-1.5 block text-xs font-semibold">Qual o foco da sua busca?</label><select id="hero-focus" name="focus" defaultValue="" className={`${field} w-full rounded-md border border-input text-sm`} aria-invalid={!!errors["focus"]}><option value="" disabled>Selecione uma opção</option><option>Mobiliário</option><option>Decoração</option><option>Enxoval/Utilidades</option><option>Projeto Completo</option></select>{errors["focus"] && <p className="mt-1 text-xs text-destructive">{errors["focus"]}</p>}</div>
         <fieldset><legend className="mb-2 text-xs font-semibold">Você é?</legend><div className="flex flex-wrap gap-4 text-sm"><label className="flex items-center gap-2"><input type="radio" name="profile" value="cliente" defaultChecked /> Cliente final</label><label className="flex items-center gap-2"><input type="radio" name="profile" value="profissional" /> Arquiteto ou designer</label></div></fieldset>
       </>}
-      <label className="flex items-start gap-2 text-xs text-muted-foreground"><input type="checkbox" name="consent" className="mt-0.5 size-4" /> Autorizo o contato sobre catálogo, orçamento e atendimento.</label>
+      <label className={`flex items-start gap-2 text-xs ${final ? "text-muted-foreground" : "text-dark-muted"}`}><input type="checkbox" name="consent" className="mt-0.5 size-4" /> Autorizo o contato sobre catálogo, orçamento e atendimento.</label>
        <Button type="submit" variant="premium" size="touch" className="w-full whitespace-normal" disabled={loading}>{loading ? <LoaderCircle className="animate-spin" /> : <ArrowRight />} {loading ? "Enviando..." : final ? "Enviar e falar com um consultor" : "Baixar Catálogo & Falar com Consultor"}</Button>
-      <p className="text-center text-[11px] leading-relaxed text-muted-foreground">Seus dados estão protegidos. Consulte nossa <a href="/politica-de-privacidade" className="underline">Política de Privacidade</a>.</p>
+      <p className={`text-center text-[11px] leading-relaxed ${final ? "text-muted-foreground" : "text-dark-muted"}`}>Seus dados estão protegidos. Consulte nossa <a href="/politica-de-privacidade" className="underline">Política de Privacidade</a>.</p>
     </form>
   );
 }
