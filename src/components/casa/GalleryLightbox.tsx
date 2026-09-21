@@ -60,7 +60,7 @@ export function GalleryLightbox() {
         <span className="gallery-expand"><Maximize2 className="size-4" /> Ampliar</span>
       </button>)}
     </div>
-    {active !== null && <div
+    {active !== null && casaAssets.gallery[active] && <div
       className="fixed inset-0 z-[90] grid place-items-center bg-overlay px-3 py-16 sm:px-12"
       role="dialog"
       aria-modal="true"
@@ -72,7 +72,7 @@ export function GalleryLightbox() {
       <Button ref={closeButton} data-lightbox-control variant="glassDark" size="icon" className="absolute right-4 top-4 size-12" onClick={close} aria-label="Fechar galeria"><X /></Button>
       <Button data-lightbox-control variant="glassDark" size="icon" className="absolute left-3 top-1/2 size-12 -translate-y-1/2 sm:left-6" onClick={() => move(-1)} aria-label="Imagem anterior"><ChevronLeft /></Button>
       <figure className="max-h-full max-w-6xl text-center">
-        <img src={casaAssets.gallery[active].large} alt={galleryAlts[active]} width="1600" height="1200" className="max-h-[78svh] max-w-full object-contain" />
+        <img src={casaAssets.gallery[active]?.large} alt={galleryAlts[active] ?? "Inspiração Casa Bem Otto"} width="1600" height="1200" className="max-h-[78svh] max-w-full object-contain" />
         <figcaption className="mt-4 text-xs text-dark-muted">{active + 1} / {casaAssets.gallery.length}</figcaption>
       </figure>
       <Button data-lightbox-control variant="glassDark" size="icon" className="absolute right-3 top-1/2 size-12 -translate-y-1/2 sm:right-6" onClick={() => move(1)} aria-label="Próxima imagem"><ChevronRight /></Button>
