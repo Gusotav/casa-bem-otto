@@ -124,8 +124,9 @@ button, a, input, select, textarea { outline-offset: 3px; }
 .comparison-best-head, .comparison-best { border-left: 1px solid oklch(0.72 0.205 151 / 38%); background: oklch(0.72 0.205 151 / 10%); box-shadow: inset 1px 0 0 oklch(0.965 0.014 87 / 4%); }
 .comparison-row:hover .comparison-best svg { transform: scale(1.12); }
 .comparison-best svg { transition: transform .25s ease; }
-.stats-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1px; background: var(--dark-line); border: 1px solid var(--dark-line); }
-.stat-card { min-height: 12rem; padding: clamp(1.75rem, 3vw, 2.75rem); background: var(--surface-dark-soft); }
+.stats-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: clamp(.65rem, 1.2vw, 1rem); }
+.stat-card { position: relative; min-height: 12rem; overflow: hidden; border: 1px solid var(--glass-border); border-radius: calc(var(--radius) + .35rem); padding: clamp(1.75rem, 3vw, 2.75rem); background: var(--glass); box-shadow: var(--shadow-glass); backdrop-filter: blur(16px); }
+.stat-card::before { content: ""; position: absolute; inset: 0 14% auto; height: 1px; background: linear-gradient(90deg, transparent, oklch(0.965 0.014 87 / 44%), transparent); pointer-events: none; }
 .stat-label { margin-top: clamp(1.5rem, 2.5vw, 2rem); padding-top: clamp(1.4rem, 2vw, 1.75rem); border-top: 1px solid var(--dark-line); }
 .gallery-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: .65rem; }
 .gallery-tile { position: relative; min-width: 0; overflow: hidden; border-radius: var(--radius); aspect-ratio: 4/5; cursor: zoom-in; }
@@ -155,7 +156,7 @@ button, a, input, select, textarea { outline-offset: 3px; }
   .gallery-tile { aspect-ratio: 4/3; }
 }
 @media (max-width: 767px) {
-  .glass-panel, .dark-glass, .comparison-table { backdrop-filter: blur(8px); }
+  .glass-panel, .dark-glass, .comparison-table, .stat-card { backdrop-filter: blur(8px); }
   .hero-shade { background: linear-gradient(180deg, oklch(0.09 0.006 67 / 55%) 0%, oklch(0.09 0.006 67 / 95%) 72%); }
   .hero-parallax { transform: scale(1.02); }
   .hero-title { max-width: 24rem; font-size: clamp(2.25rem, 11vw, 3.15rem); }
