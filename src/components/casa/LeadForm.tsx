@@ -45,7 +45,7 @@ export function LeadForm({ variant = "hero" }: Props) {
 
   const field = final
     ? "h-12 border-input bg-background px-4 text-foreground shadow-none placeholder:text-muted-foreground focus-visible:ring-primary"
-    : "h-12 border-glass-border bg-field px-4 text-primary-foreground shadow-none placeholder:text-dark-muted focus-visible:ring-primary";
+    : "h-12 border-glass-border bg-field px-4 text-dark-foreground shadow-none placeholder:text-dark-muted focus-visible:ring-primary";
   return (
     <form onSubmit={submit} noValidate className={`space-y-4 ${final ? "text-foreground" : "text-dark-foreground"}`}>
       <div>
@@ -61,7 +61,7 @@ export function LeadForm({ variant = "hero" }: Props) {
         <div><label htmlFor="final-city" className="mb-1.5 block text-xs font-semibold">Cidade / Estado</label><Input id="final-city" name="city" maxLength={100} className={field} /></div>
         <div><label htmlFor="final-message" className="mb-1.5 block text-xs font-semibold">Conte brevemente o que deseja</label><Textarea id="final-message" name="message" maxLength={800} rows={4} className="border-input bg-background px-4 py-3 text-foreground shadow-none placeholder:text-muted-foreground focus-visible:ring-primary" /></div>
       </> : <>
-        <div><label htmlFor="hero-focus" className="mb-1.5 block text-xs font-semibold">Qual o foco da sua busca?</label><select id="hero-focus" name="focus" defaultValue="" className={`${field} w-full rounded-md border border-input text-sm`} aria-invalid={!!errors["focus"]}><option value="" disabled>Selecione uma opção</option><option>Mobiliário</option><option>Decoração</option><option>Enxoval/Utilidades</option><option>Projeto Completo</option></select>{errors["focus"] && <p className="mt-1 text-xs text-destructive">{errors["focus"]}</p>}</div>
+        <div><label htmlFor="hero-focus" className="mb-1.5 block text-xs font-semibold">Qual o foco da sua busca?</label><select id="hero-focus" name="focus" defaultValue="" className={`${field} w-full rounded-md border border-glass-border text-sm [&>option]:bg-surface-dark [&>option]:text-dark-foreground`} aria-invalid={!!errors["focus"]}><option value="" disabled>Selecione uma opção</option><option>Mobiliário</option><option>Decoração</option><option>Enxoval/Utilidades</option><option>Projeto Completo</option></select>{errors["focus"] && <p className="mt-1 text-xs text-destructive">{errors["focus"]}</p>}</div>
         <fieldset><legend className="mb-2 text-xs font-semibold">Você é?</legend><div className="flex flex-wrap gap-4 text-sm"><label className="flex items-center gap-2"><input type="radio" name="profile" value="cliente" defaultChecked /> Cliente final</label><label className="flex items-center gap-2"><input type="radio" name="profile" value="profissional" /> Arquiteto ou designer</label></div></fieldset>
       </>}
       <label className={`flex items-start gap-2 text-xs ${final ? "text-muted-foreground" : "text-dark-muted"}`}><input type="checkbox" name="consent" className="mt-0.5 size-4" /> Autorizo o contato sobre catálogo, orçamento e atendimento.</label>
