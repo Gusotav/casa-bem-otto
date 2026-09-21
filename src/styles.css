@@ -98,6 +98,7 @@ button, a, input, select, textarea { outline-offset: 3px; }
 @utility eyebrow { display: flex; align-items: center; gap: .7rem; font-size: .7rem; line-height: 1rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--primary-hover); }
 @utility display-title { font-family: var(--font-display); font-weight: 600; line-height: 1.02; letter-spacing: 0; text-wrap: balance; }
 @utility section-title { font-family: var(--font-display); font-size: clamp(2.15rem, 4.2vw, 4.25rem); font-weight: 600; line-height: 1.05; letter-spacing: 0; text-wrap: balance; }
+@utility concept-title { font-family: var(--font-display); font-size: clamp(1.9rem, 3.4vw, 3.1rem); font-weight: 600; line-height: 1.06; letter-spacing: 0; text-wrap: balance; }
 @utility body-copy { max-width: 42rem; font-size: clamp(.98rem, 1.25vw, 1.08rem); line-height: 1.75; color: var(--muted-foreground); }
 @utility glass-panel { background: var(--glass); border: 1px solid var(--glass-border); box-shadow: var(--shadow-glass); backdrop-filter: blur(14px); }
 @utility image-cover { width: 100%; height: 100%; object-fit: cover; }
