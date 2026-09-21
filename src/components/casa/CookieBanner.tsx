@@ -12,7 +12,7 @@ export function CookieBanner() {
     <div className="grid grid-cols-[auto_minmax(0,1fr)_auto] gap-3">
       <Cookie className="mt-0.5 size-5 shrink-0 text-primary" />
       <div className="min-w-0"><p className="text-sm font-bold">Sua privacidade importa</p><p className="mt-1 text-xs leading-relaxed text-muted-foreground">Usamos apenas cookies essenciais para lembrar suas escolhas. Cookies analíticos só serão ativados com sua autorização.</p>{manage && <label className="mt-3 flex items-center gap-2 text-xs"><input type="checkbox" disabled /> Cookies analíticos (ainda não utilizados)</label>}</div>
-      <button onClick={() => setVisible(false)} className="grid size-8 shrink-0 place-items-center rounded-md hover:bg-muted" aria-label="Fechar aviso"><X className="size-4" /></button>
+      <Button variant="ghost" size="icon" onClick={() => setVisible(false)} className="size-8 shrink-0" aria-label="Fechar aviso"><X className="size-4" /></Button>
     </div>
     <div className="mt-4 flex flex-wrap gap-2 pl-8"><Button size="sm" variant="premium" onClick={() => decide("accepted")}>Aceitar</Button><Button size="sm" variant="outline" onClick={() => decide("essential")}>Recusar</Button><Button size="sm" variant="ghost" onClick={() => setManage(!manage)}>Gerenciar preferências</Button><a href="/politica-de-cookies" className="self-center text-xs underline">Política de Cookies</a></div>
   </aside>;
