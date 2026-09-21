@@ -45,7 +45,7 @@ export function LeadForm({ variant = "hero" }: Props) {
 
   const field = final
     ? "h-12 border-input bg-background px-4 text-foreground shadow-none placeholder:text-muted-foreground focus-visible:ring-primary"
-    : "h-12 border-glass-border bg-field px-4 text-primary-foreground shadow-none placeholder:text-dark-muted focus-visible:ring-primary";
+    : "h-12 border-glass-border bg-field px-4 text-dark-foreground shadow-none placeholder:text-dark-muted focus-visible:ring-primary";
   return (
     <form onSubmit={submit} noValidate className={`space-y-4 ${final ? "text-foreground" : "text-dark-foreground"}`}>
       <div>
