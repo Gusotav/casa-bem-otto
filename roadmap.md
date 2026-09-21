@@ -7,5 +7,5 @@
 - [x] Atualizar hero, navbar e card de condições especiais
 - [x] Reestruturar tópicos, coleções, comparativo, números e pós-venda
 - [x] Substituir depoimentos por galeria com lightbox acessível
-- [ ] Validar CTAs, formulários, cookies e páginas legais
-- [ ] Validar 320–1440px e ultrawide sem overflow ou sobreposição
+- [x] Validar CTAs, formulários, cookies e páginas legais
+- [x] Validar 320–1440px e ultrawide sem overflow ou sobreposição

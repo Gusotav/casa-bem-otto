@@ -15,7 +15,7 @@ const buttonVariants = cva(
         glass:
           "border border-glass-border bg-glass text-primary-foreground backdrop-blur-md hover:border-primary/60 hover:bg-glass-strong",
         glassDark:
-          "border border-glass-border bg-glass text-primary-foreground shadow-glass backdrop-blur-md hover:border-primary/70 hover:bg-glass-strong",
+          "border border-glass-border bg-glass text-dark-foreground shadow-glass backdrop-blur-md hover:border-primary/70 hover:bg-glass-strong",
         light:
           "bg-primary text-primary-foreground shadow-premium hover:bg-primary-hover hover:-translate-y-0.5",
         destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
