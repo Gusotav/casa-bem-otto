@@ -125,7 +125,7 @@ button, a, input, select, textarea { outline-offset: 3px; }
 .comparison-best svg { transition: transform .25s ease; }
 .stats-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1px; background: var(--dark-line); border: 1px solid var(--dark-line); }
 .stat-card { min-height: 12rem; padding: clamp(1.75rem, 3vw, 2.75rem); background: var(--surface-dark-soft); }
-.stat-label { margin-top: clamp(1.5rem, 2.5vw, 2rem); padding-top: 1.1rem; border-top: 1px solid var(--dark-line); }
+.stat-label { margin-top: clamp(1.5rem, 2.5vw, 2rem); padding-top: clamp(1.4rem, 2vw, 1.75rem); border-top: 1px solid var(--dark-line); }
 .gallery-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: .65rem; }
 .gallery-tile { position: relative; min-width: 0; overflow: hidden; border-radius: var(--radius); aspect-ratio: 4/5; cursor: zoom-in; }
 .gallery-expand { position: absolute; right: .75rem; bottom: .75rem; display: flex; align-items: center; gap: .45rem; border: 1px solid var(--glass-border); border-radius: 999px; background: var(--glass); padding: .55rem .75rem; color: var(--dark-foreground); font-size: .7rem; font-weight: 600; opacity: 0; transform: translateY(.35rem); transition: opacity .25s ease, transform .25s ease; backdrop-filter: blur(8px); }
